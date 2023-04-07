@@ -6,19 +6,15 @@ const MeteoCard = () => {
   const icona = `https://openweathermap.org/img/w/${meteo.weather[0].icon}.png`;
   return (
     <Row className="justify-content-center align-items-center">
-      <Col>
+      <Col xs={12} lg={6} className="d-flex justify-content-center">
         <img src={icona} className="card-img-top" alt="Weather" />
       </Col>
-      <Col>
-        <div className="card mb-3">
-          <div className="card-body">
+      <Col xs={12} lg={6} className="d-flex justify-content-center">
+        <div className="card mb-3 border border-0">
+          <div className="card-body text-center">
             <h1 className="card-title display-1">{meteo.name}</h1>
+            <p className="card-text fs-3">{meteo.weather[0].description}</p>
             <h1>{parseFloat(meteo.main.temp).toFixed(0)}°</h1>
-            <p className="card-text">{meteo.weather[0].description}</p>
-            <p className="card-text">
-              <small className="text-body-secondary">temperatura massima: {meteo.main.temp_max}°</small>
-            </p>
-            <p className="card-text">temperatura minima: {meteo.main.temp_min}°</p>
           </div>
         </div>
       </Col>

@@ -1,12 +1,15 @@
 import { useEffect } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Dropdown, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 
 const Forecast = () => {
   const dispatch = useDispatch();
+  const meteoSettimana = useSelector((state) => state.meteoSettimana.content);
+  const luogo = useSelector((state) => state.luogo.content);
+  const lat = luogo[0].lat;
+  const lon = luogo[0].lon;
 
-  const endpoint =
-    "https://api.openweathermap.org/data/2.5/forecast?lat=&lon=&units=metric&lang=it&appid=1e7795cb84549b8207c3faa5a25863a5";
+  const endpoint = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&lang=it&appid=1e7795cb84549b8207c3faa5a25863a5`;
   const request = async (endpoint) => {
     try {
       const response = await fetch(endpoint);
@@ -22,31 +25,38 @@ const Forecast = () => {
   useEffect(() => {
     request(endpoint);
   }, []);
-  const meteoSettimana = useSelector((state) => state.meteoSettimana.content);
+
   return (
     <Container>
       {meteoSettimana !== null && (
         <>
-          <Row className="flex-column flex-lg-row">
+          <Row className="flex-column">
             {meteoSettimana.list.map((day, index) => (
-              <Col
+              <Row
                 key={index}
-                className="d-flex flex-row flex-lg-column justify-content-center align-items-center text-center"
+                className=" border border-ligth rounded my-1 justify-content-center align-items-center text-center"
               >
-                {day.dt_txt}
-                <p>
-                  <img className="w-50" src="https://www.pngmart.com/files/3/Weather-PNG-HD.png" alt="img" />
-                </p>
-                <h1 className="fs-5"></h1>
-                <h1 className="fs-5"> {day.main.temp}</h1>
-                <p className="">{day.weather.description}</p>
-                <p className="">
-                  <small className="text-body-secondary">{day.main.temp_max}</small>
-                </p>
-                <p className="">
-                  <small className="text-body-secondary">{day.main.temp_min}</small>
-                </p>
-              </Col>
+                <Col xs={4} lg={3}>
+                  {day.dt_txt}
+                </Col>
+
+                <Col xs={4} lg={2}>
+                  <img className="" src={`https://openweathermap.org/img/w/${day.weather[0].icon}.png`} alt="img" />
+                  <p>{day.weather[0].description}</p>
+                </Col>
+
+                <Col xs={4} lg={2} className="fs-5">
+                  <p> {day.main.temp}°C</p>
+                  <p className="fs-6">({day.main.feels_like}°C)</p>
+                  <p className="fs-6">percepita</p>
+                </Col>
+                <Col lg={3} className="d-none d-lg-block">
+                  Umidità: {day.main.humidity}%
+                </Col>
+                <Col lg={2} className="d-none d-lg-block">
+                  Vento: {day.wind.speed}km/h
+                </Col>
+              </Row>
             ))}
           </Row>
         </>
