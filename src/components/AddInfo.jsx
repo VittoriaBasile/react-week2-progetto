@@ -1,6 +1,8 @@
 import { Card, Col, Row } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
 const AddInfo = () => {
+  const meteo = useSelector((state) => state.meteo.content);
   return (
     <Row>
       <Col>
