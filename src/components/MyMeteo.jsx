@@ -10,9 +10,10 @@ const MyMeteo = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const meteo = useSelector((state) => state.meteo.content);
+  const luogo = useSelector((state) => state.luogo.content);
 
-  const lat = "41.1983522";
-  const lon = "16.5776247";
+  const lat = luogo[0].lat;
+  const lon = luogo[0].lon;
   const endpoint = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=it&appid=1e7795cb84549b8207c3faa5a25863a5`;
 
   const request = async (endpoint) => {
