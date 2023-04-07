@@ -3,12 +3,12 @@ import { Col, Container, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 
 const Forecast = () => {
-  const meteoSettimana = useSelector((state) => state.meteoSettimana.content);
   const dispatch = useDispatch();
   const lat = "41.1983522";
   const lon = "16.5776247";
 
-  const endpoint = `api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&lang=it&appid=1e7795cb84549b8207c3faa5a25863a5`;
+  const endpoint =
+    "api.openweathermap.org/data/2.5/forecast?lat=41.1992456&lon=16.5968279&units=metric&lang=it&appid=1e7795cb84549b8207c3faa5a25863a5";
   const request = async (endpoint) => {
     try {
       const response = await fetch(endpoint);
@@ -24,7 +24,7 @@ const Forecast = () => {
   useEffect(() => {
     request(endpoint);
   }, []);
-
+  const meteoSettimana = useSelector((state) => state.meteoSettimana.content);
   return (
     <Container>
       {meteoSettimana !== null && (

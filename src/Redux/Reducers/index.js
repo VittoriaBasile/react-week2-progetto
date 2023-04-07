@@ -5,6 +5,9 @@ const InitialState = {
   meteoSettimana: {
     content: null,
   },
+  luogo: {
+    content: [],
+  },
 };
 const mainReducer = (state = InitialState, action) => {
   switch (action.type) {
@@ -21,6 +24,15 @@ const mainReducer = (state = InitialState, action) => {
         ...state,
         meteoSettimana: {
           ...state.meteoSettimana,
+          content: action.payload,
+        },
+      };
+
+    case "SEARCH_TOWN":
+      return {
+        ...state,
+        luogo: {
+          ...state.luogo,
           content: action.payload,
         },
       };
