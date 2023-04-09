@@ -1,3 +1,25 @@
+.homeImage {
+  width: 100%;
+  position: relative;
+}
+
+.ricerca {
+  position: absolute;
+  top: 70%;
+  right: 400px;
+}
+.title {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.container1 {
+  background-color: #91d0ff;
+}
+.container {
+  background-image: url("https://img.freepik.com/premium-photo/light-sky-clouds-background_483040-4434.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .card-img-top {
   width: 600px;
 }

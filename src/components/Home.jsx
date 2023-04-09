@@ -16,7 +16,7 @@ const Home = () => {
       const response = await fetch(endpoint);
       if (response.ok) {
         const data = await response.json();
-        console.log(data);
+
         dispatch({ type: "SEARCH_TOWN", payload: data });
         navigate("/my-meteo");
       }
@@ -26,12 +26,17 @@ const Home = () => {
   };
 
   return (
-    <Container className="home">
-      <Row className="justify-content-center text-center">
-        <h1>Meteo.Vic</h1>
+    <Container fluid className="home px-0">
+      <img
+        className="homeImage "
+        src="https://www.nonsprecare.it/wp-content/uploads/2018/10/a-cosa-servono-le-nuvole-video-2-640x424.jpg"
+        alt="img"
+      />
+      <Row className="ricerca justify-content-center text-center">
+        <h1 className="title display-3">Meteo.Vic</h1>
         <Form onSubmit={cerca} size="lg">
           <FormGroup>
-            <Form.Control value={valore} onChange={(e) => setValue(e.target.value)} />
+            <Form.Control placeholder="search the city" value={valore} onChange={(e) => setValue(e.target.value)} />
           </FormGroup>
         </Form>
       </Row>

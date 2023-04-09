@@ -5,7 +5,7 @@ const MeteoCard = () => {
   const meteo = useSelector((state) => state.meteo.content);
   const icona = `https://openweathermap.org/img/w/${meteo.weather[0].icon}.png`;
   return (
-    <Row className="justify-content-center align-items-center">
+    <Row className="justify-content-center align-items-center container1">
       <Col xs={12} lg={6} className="d-flex justify-content-center">
         <img src={icona} className="card-img-top" alt="Weather" />
       </Col>
