@@ -3,54 +3,64 @@ import { useSelector } from "react-redux";
 
 const AddInfo = () => {
   const meteo = useSelector((state) => state.meteo.content);
+  const sunrise =
+    parseInt(((meteo.sys.sunrise / (1000 * 60 + 60)) % 24) + 1) +
+    ":" +
+    parseInt((meteo.sys.sunrise / (1000 * 60)) % 60);
+
+  const sunset =
+    parseInt(((meteo.sys.sunset / (1000 * 60 + 60)) % 24) + 1) + ":" + parseInt((meteo.sys.sunset / (1000 * 60)) % 60);
   return (
-    <Row>
+    <Row className="mt-5">
+      <Col>
+        <Card className="text-center">
+          <Card.Header>
+            <p className="fw-bold">Pressione</p>
+            <p>(mbar)</p>
+          </Card.Header>
+          <Card.Body>
+            <Card.Text>{meteo.main.pressure}</Card.Text>
+          </Card.Body>
+        </Card>
+      </Col>
+      <Col>
+        <Card border="secondary" className="text-center">
+          <Card.Header>
+            <p className="fw-bold">T Max</p>
+            <p>( °C )</p>
+          </Card.Header>
+          <Card.Body>
+            <Card.Text>{meteo.main.temp_max}</Card.Text>
+          </Card.Body>
+        </Card>
+      </Col>
+      <Col>
+        <Card border="secondary" className="text-center">
+          <Card.Header>
+            <p className="fw-bold">T Min</p>
+            <p>( °C )</p>
+          </Card.Header>
+          <Card.Body>
+            <Card.Text>{meteo.main.temp_min}</Card.Text>
+          </Card.Body>
+        </Card>
+      </Col>
       <Col>
         <Card border="secondary">
-          <Card.Header>Header</Card.Header>
+          <Card.Header>Alba</Card.Header>
           <Card.Body>
             <Card.Text>
-              Some quick example text to build on the card title and make up the bulk of the card's content.
+              <p>{sunrise} am</p>
             </Card.Text>
           </Card.Body>
         </Card>
       </Col>
       <Col>
         <Card border="secondary">
-          <Card.Header>Header</Card.Header>
+          <Card.Header>Tramonto</Card.Header>
           <Card.Body>
             <Card.Text>
-              Some quick example text to build on the card title and make up the bulk of the card's content.
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      </Col>
-      <Col>
-        <Card border="secondary">
-          <Card.Header>Header</Card.Header>
-          <Card.Body>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the bulk of the card's content.
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      </Col>
-      <Col>
-        <Card border="secondary">
-          <Card.Header>Header</Card.Header>
-          <Card.Body>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the bulk of the card's content.
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      </Col>
-      <Col>
-        <Card border="secondary">
-          <Card.Header>Header</Card.Header>
-          <Card.Body>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the bulk of the card's content.
+              <p>{sunset} pm</p>
             </Card.Text>
           </Card.Body>
         </Card>

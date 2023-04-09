@@ -4,3 +4,10 @@
 .img-forecast {
   width: 100px;
 }
+.oraPerOra {
+  height: 700px;
+  overflow: auto;
+}
+.oraPerOra::-webkit-scrollbar {
+  display: none;
+}

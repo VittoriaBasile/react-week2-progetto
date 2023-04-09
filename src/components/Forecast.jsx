@@ -27,10 +27,10 @@ const Forecast = () => {
   }, []);
 
   return (
-    <Container>
+    <Container className="oraPerOra">
       {meteoSettimana !== null && (
         <>
-          <Row className="flex-column">
+          <Row className="flex-column ">
             {meteoSettimana.list.map((day, index) => (
               <Row
                 key={index}
@@ -46,9 +46,9 @@ const Forecast = () => {
                 </Col>
 
                 <Col xs={4} lg={2} className="fs-5">
-                  <p> {day.main.temp}°C</p>
-                  <p className="fs-6">({day.main.feels_like}°C)</p>
-                  <p className="fs-6">percepita</p>
+                  <p className="fw-bold"> {day.main.temp}°C</p>
+                  <span className="fs-6">Percepita : </span>
+                  <span className="fs-6">( {day.main.feels_like} °C )</span>
                 </Col>
                 <Col lg={3} className="d-none d-lg-block">
                   Umidità: {day.main.humidity}%
