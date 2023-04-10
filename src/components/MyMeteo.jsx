@@ -1,4 +1,4 @@
-import { Alert, Button, Col, Container, Row, Spinner } from "react-bootstrap";
+import { Button, Col, Container, Row, Spinner } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import MeteoCard from "./MeteoCard";
 import Forecast from "./Forecast";
@@ -38,39 +38,41 @@ const MyMeteo = () => {
   }, []);
 
   return (
-    <Container>
-      <Row>
-        <Col className="d-flex justify-content-end">
-          <Button
-            onClick={() => {
-              navigate("/");
-            }}
-            variant="primary"
-            className="my-4"
-          >
-            Torna ad home
-          </Button>
-        </Col>
-      </Row>
-      <Row>
-        <>
-          {isLoading && (
-            <div className="container-fluid d-flex justify-content-center">
-              <Spinner variant="primary" animation="border" role="status">
-                <span className="visually-hidden">Loading...</span>
-              </Spinner>
-            </div>
-          )}
-        </>
-      </Row>
-      {meteo !== null && (
-        <div className="">
-          <MeteoCard />
-          <Forecast className="container" />
-          <AddInfo />
-        </div>
-      )}
-    </Container>
+    <>
+      <Container fluid className="sfondoMeteo w-100 h-100 mx-0 px-0">
+        <Row>
+          <Col className="d-flex justify-content-end">
+            <Button
+              onClick={() => {
+                navigate("/");
+              }}
+              variant="primary"
+              className="my-4"
+            >
+              Torna ad home
+            </Button>
+          </Col>
+        </Row>
+        <Row>
+          <>
+            {isLoading && (
+              <div className="container-fluid d-flex justify-content-center">
+                <Spinner variant="primary" animation="border" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </Spinner>
+              </div>
+            )}
+          </>
+        </Row>
+        {meteo !== null && (
+          <div className="">
+            <MeteoCard />
+            <Forecast />
+            <AddInfo />
+          </div>
+        )}
+      </Container>
+    </>
   );
 };
 export default MyMeteo;

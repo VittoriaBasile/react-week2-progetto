@@ -13,7 +13,7 @@ const AddInfo = () => {
   return (
     <Row className="mt-5">
       <Col>
-        <Card className="text-center">
+        <Card className="Pressione text-center">
           <Card.Header>
             <p className="fw-bold">Pressione</p>
             <p>(mbar)</p>

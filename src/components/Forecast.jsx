@@ -27,14 +27,14 @@ const Forecast = () => {
   }, []);
 
   return (
-    <Container className="oraPerOra">
+    <Container className="oraPerOra mx-auto">
       {meteoSettimana !== null && (
         <>
-          <Row className="flex-column ">
+          <Row className="flex-column  align-items-center">
             {meteoSettimana.list.map((day, index) => (
               <Row
                 key={index}
-                className=" border border-ligth rounded my-1 justify-content-center align-items-center text-center"
+                className="singleForecast border border-ligth rounded my-1 justify-content-center align-items-center text-center"
               >
                 <Col xs={4} lg={3}>
                   {day.dt_txt}

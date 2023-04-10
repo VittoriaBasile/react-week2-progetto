@@ -27,12 +27,7 @@ const Home = () => {
 
   return (
     <Container fluid className="home px-0">
-      <img
-        className="homeImage "
-        src="https://www.nonsprecare.it/wp-content/uploads/2018/10/a-cosa-servono-le-nuvole-video-2-640x424.jpg"
-        alt="img"
-      />
-      <Row className="ricerca justify-content-center text-center">
+      <Row className="ricerca position-absolute top-50 start-50 translate-middle text-center">
         <h1 className="title display-3">Meteo.Vic</h1>
         <Form onSubmit={cerca} size="lg">
           <FormGroup>
