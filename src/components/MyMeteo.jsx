@@ -46,8 +46,8 @@ const MyMeteo = () => {
               onClick={() => {
                 navigate("/");
               }}
-              variant="primary"
-              className="my-4"
+              variant="transparent"
+              className="my-4 "
             >
               Torna ad home
             </Button>
