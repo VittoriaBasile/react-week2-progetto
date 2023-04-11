@@ -47,7 +47,7 @@ const MyMeteo = () => {
                 navigate("/");
               }}
               variant="transparent"
-              className="my-4 "
+              className="my-4 border border-ligth"
             >
               Torna ad home
             </Button>
