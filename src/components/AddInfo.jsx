@@ -4,12 +4,10 @@ import { useSelector } from "react-redux";
 const AddInfo = () => {
   const meteo = useSelector((state) => state.meteo.content);
   const sunrise =
-    parseInt(((meteo.sys.sunrise / (1000 * 60 + 60)) % 24) + 1) +
-    ":" +
-    parseInt((meteo.sys.sunrise / (1000 * 60)) % 60);
+    parseInt((meteo.sys.sunrise / (1000 * 60 + 60)) % 24) + ":" + parseInt((meteo.sys.sunrise / (1000 * 60)) % 60);
 
   const sunset =
-    parseInt(((meteo.sys.sunset / (1000 * 60 + 60)) % 24) + 1) + ":" + parseInt((meteo.sys.sunset / (1000 * 60)) % 60);
+    parseInt((meteo.sys.sunset / (1000 * 60 + 60)) % 24) + ":" + parseInt((meteo.sys.sunset / (1000 * 60)) % 60);
   return (
     <Row className="my-5 mx-2" xs={1} md={2} lg={5}>
       <Col>
