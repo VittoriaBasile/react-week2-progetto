@@ -14,7 +14,7 @@ const MeteoCard = () => {
           <div className="card-body text-center">
             <h1 className="card-title display-1">{meteo.name}</h1>
             <p className="card-text fs-3">{meteo.weather[0].description}</p>
-            <h1>{parseFloat(meteo.main.temp).toFixed(0)}°</h1>
+            <h1>{parseFloat(meteo.main.temp).toFixed(0)}°C</h1>
           </div>
         </div>
       </Col>
