@@ -12,7 +12,7 @@
 
 .sfondoMeteo {
   background: rgb(130, 134, 191);
-  background: linear-gradient(180deg, rgba(130, 134, 191, 1) 0%, rgba(29, 46, 219, 1) 100%);
+  background: linear-gradient(180deg, rgb(146, 149, 201) 0%, rgb(70, 82, 215) 100%);
   background-size: cover;
   overflow: hidden;
 }
