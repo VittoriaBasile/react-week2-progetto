@@ -11,7 +11,7 @@ const AddInfo = () => {
   const sunset =
     parseInt(((meteo.sys.sunset / (1000 * 60 + 60)) % 24) + 1) + ":" + parseInt((meteo.sys.sunset / (1000 * 60)) % 60);
   return (
-    <Row className="mt-5">
+    <Row className="my-5">
       <Col>
         <Card className="Pressione text-center">
           <Card.Header>
@@ -19,35 +19,44 @@ const AddInfo = () => {
             <p>(mbar)</p>
           </Card.Header>
           <Card.Body>
-            <Card.Text>{meteo.main.pressure}</Card.Text>
+            <Card.Text>
+              <p>{meteo.main.pressure}</p>
+            </Card.Text>
           </Card.Body>
         </Card>
       </Col>
       <Col>
-        <Card border="secondary" className="text-center">
+        <Card border="secondary" className="TMax text-center">
           <Card.Header>
             <p className="fw-bold">T Max</p>
             <p>( °C )</p>
           </Card.Header>
           <Card.Body>
-            <Card.Text>{meteo.main.temp_max}</Card.Text>
+            <Card.Text>
+              <p>{meteo.main.temp_max}</p>
+            </Card.Text>
           </Card.Body>
         </Card>
       </Col>
       <Col>
-        <Card border="secondary" className="text-center">
+        <Card border="secondary" className="TMin text-center">
           <Card.Header>
             <p className="fw-bold">T Min</p>
             <p>( °C )</p>
           </Card.Header>
           <Card.Body>
-            <Card.Text>{meteo.main.temp_min}</Card.Text>
+            <Card.Text>
+              <p>{meteo.main.temp_min}</p>
+            </Card.Text>
           </Card.Body>
         </Card>
       </Col>
       <Col>
-        <Card border="secondary">
-          <Card.Header>Alba</Card.Header>
+        <Card border=" secondary" className="Sunrise text-center">
+          <Card.Header>
+            <p className="fw-bold">Alba</p>
+            <p>(sunrise)</p>
+          </Card.Header>
           <Card.Body>
             <Card.Text>
               <p>{sunrise} am</p>
@@ -56,8 +65,11 @@ const AddInfo = () => {
         </Card>
       </Col>
       <Col>
-        <Card border="secondary">
-          <Card.Header>Tramonto</Card.Header>
+        <Card border="secondary" className="Sunset text-center">
+          <Card.Header>
+            <p className="fw-bold">Tramonto</p>
+            <p>(sunset)</p>
+          </Card.Header>
           <Card.Body>
             <Card.Text>
               <p>{sunset} pm</p>

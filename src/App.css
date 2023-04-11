@@ -36,6 +36,23 @@
   background-color: rgba(142, 186, 224, 0.5);
 }
 .Pressione {
+  background: rgb(221, 50, 214);
+  background: linear-gradient(180deg, rgba(221, 50, 214, 1) 0%, rgba(115, 29, 219, 1) 100%);
+}
+
+.TMax {
   background: rgb(221, 50, 79);
   background: linear-gradient(180deg, rgba(221, 50, 79, 1) 0%, rgba(115, 29, 219, 1) 100%);
+}
+.TMin {
+  background: rgb(249, 245, 248);
+  background: linear-gradient(180deg, rgba(249, 245, 248, 1) 0%, rgba(157, 156, 158, 1) 100%);
+}
+.Sunrise {
+  background: rgb(251, 246, 128);
+  background: linear-gradient(180deg, rgba(251, 246, 128, 1) 0%, rgba(249, 220, 21, 1) 100%);
+}
+.Sunset {
+  background: rgb(249, 159, 63);
+  background: linear-gradient(180deg, rgba(249, 159, 63, 1) 0%, rgba(249, 47, 21, 1) 100%);
 }
