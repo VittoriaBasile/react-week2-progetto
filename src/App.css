@@ -56,3 +56,6 @@
   background: rgb(249, 159, 63);
   background: linear-gradient(180deg, rgba(249, 159, 63, 1) 0%, rgba(249, 47, 21, 1) 100%);
 }
+.addInfo {
+  box-shadow: 5px 5px 5px black;
+}

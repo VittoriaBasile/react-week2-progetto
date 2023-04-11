@@ -13,7 +13,7 @@ const AddInfo = () => {
   return (
     <Row className="my-5">
       <Col>
-        <Card className="Pressione text-center">
+        <Card className="addInfo Pressione text-center">
           <Card.Header>
             <p className="fw-bold">Pressione</p>
             <p>(mbar)</p>
@@ -26,7 +26,7 @@ const AddInfo = () => {
         </Card>
       </Col>
       <Col>
-        <Card border="secondary" className="TMax text-center">
+        <Card border="secondary" className="addInfo TMax text-center">
           <Card.Header>
             <p className="fw-bold">T Max</p>
             <p>( °C )</p>
@@ -39,7 +39,7 @@ const AddInfo = () => {
         </Card>
       </Col>
       <Col>
-        <Card border="secondary" className="TMin text-center">
+        <Card border="secondary" className="addInfo TMin text-center">
           <Card.Header>
             <p className="fw-bold">T Min</p>
             <p>( °C )</p>
@@ -52,7 +52,7 @@ const AddInfo = () => {
         </Card>
       </Col>
       <Col>
-        <Card border=" secondary" className="Sunrise text-center">
+        <Card border=" secondary" className="addInfo Sunrise text-center">
           <Card.Header>
             <p className="fw-bold">Alba</p>
             <p>(sunrise)</p>
@@ -65,7 +65,7 @@ const AddInfo = () => {
         </Card>
       </Col>
       <Col>
-        <Card border="secondary" className="Sunset text-center">
+        <Card border="secondary" className="addInfo Sunset text-center">
           <Card.Header>
             <p className="fw-bold">Tramonto</p>
             <p>(sunset)</p>
